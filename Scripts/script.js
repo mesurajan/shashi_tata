@@ -84,3 +84,19 @@
         $(".box__letter").slideUp();
         $(".letter__border").slideUp();
     })
+document.addEventListener("DOMContentLoaded", function () {
+    const song = document.getElementById("birthdaySong");
+    const startOverlay = document.getElementById("startOverlay");
+    const startBtn = document.getElementById("startBtn");
+
+    startBtn.addEventListener("click", function () {
+        // Play music
+        song.play().catch((e) => {
+            console.log("Autoplay failed:", e);
+        });
+
+        // Hide overlay
+        startOverlay.style.display = "none";
+    });
+});
+
